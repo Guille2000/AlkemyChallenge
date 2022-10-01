@@ -1,7 +1,7 @@
 <h4 class="text-center text-primary">Aquí podrás ver las características de los platos que has agregado</h4>
 <div class="text-center">
-  <p>Precio Total: {{wh.precioTotal}}</p>
+  <p>Precio Total: {{wh.precioTotal | currency}}</p>
   <p>Platos veganos: {{wh.cantVeganos}}</p>
-  <p>Tiempo de preparación: {{wh.promedioPreparacion}}</p>
-  <p>Promedio HealtScore: {{wh.promedioHealthScore}}</p>
+  <p>Tiempo de preparación: {{wh.promedioPreparacion | number }}</p>
+  <p>Promedio HealtScore: {{wh.promedioHealthScore  | number }}</p>
   </div>

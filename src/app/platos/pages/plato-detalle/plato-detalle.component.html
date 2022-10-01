@@ -7,9 +7,9 @@
           <div class="card-body">
               <h4 class="card-title">{{plato?.title}}</h4>
               <div class="card-text">
-                  <div> Precio: {{plato?.pricePerServing }}</div>
-                  <div> Tiempo de preparacion: {{plato?.readyInMinutes }} minutos </div>
-                  <div> Health Score: {{plato?.healthScore }}</div>
+                  <div> Precio: {{plato?.pricePerServing | currency }}</div>
+                  <div> Tiempo de preparacion: {{plato?.readyInMinutes | number }} minutos </div>
+                  <div> Health Score: {{plato?.healthScore | number}}</div>
                   <div> Vegano: {{plato?.vegan | siono }}</div>
                   <div> Vegetariano: {{plato?.vegetarian | siono}} </div>
               </div>
