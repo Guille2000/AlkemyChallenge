@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuscadorUtilidadComponent } from './utilidades/buscador-utilidad/buscador-utilidad.component';
@@ -34,7 +33,6 @@ import { NavbarComponent } from './utilidades/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    NgxSpinnerModule,
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule

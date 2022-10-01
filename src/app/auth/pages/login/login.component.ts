@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';;
 export class LoginComponent implements OnInit {
 
   public myForm!: FormGroup;
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private spinner: NgxSpinnerService) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -32,19 +32,15 @@ export class LoginComponent implements OnInit {
     console.info('Valido', this.myForm.valid);
 
     if (this.myForm.valid) {
-      this.spinner.show('mySpinner');
-
       this.auth.obtenerToken(email, password).subscribe((data: any) => {
         localStorage.setItem('token', data.token);
         console.log(data.token);
         this.auth.iniciarSesion();
-        this.spinner.hide('mySpinner');
         this.router.navigate(['home']);
       }, (err: any) => {
-        this.spinner.hide('mySpinner');
         Swal.fire({
           title: "Error",
-          text: err.error.error,
+          text: 'Ingrese una contraseña y un email validos',
           icon: 'error',
           timer: 2000,
           confirmButtonColor: '#d33'
