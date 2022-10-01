@@ -15,6 +15,7 @@ import { PlatoDetalleComponent } from './platos/pages/plato-detalle/plato-detall
 import { SionoPipe } from './pipes/siono.pipe';
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './utilidades/navbar/navbar.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NavbarComponent } from './utilidades/navbar/navbar.component';
     NoopAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

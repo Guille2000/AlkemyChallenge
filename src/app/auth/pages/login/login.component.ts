@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent implements OnInit {
 
+  showSpinner:boolean = false
   public myForm!: FormGroup;
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
 
@@ -31,10 +32,11 @@ export class LoginComponent implements OnInit {
     console.info('Valido', this.myForm.valid);
 
     if (this.myForm.valid) {
+      this.showSpinner = true
       this.auth.obtenerToken(email, password).subscribe((data: any) => {
         localStorage.setItem('token', data.token);
-        console.log(data.token);
         this.auth.iniciarSesion();
+        this.showSpinner = false
         this.router.navigate(['home']);
       }, (err: any) => {
         Swal.fire({

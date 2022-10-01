@@ -11,16 +11,16 @@ import { PlatosService } from 'src/app/services/platos.service';
 export class PlatoDetalleComponent implements OnInit {
 
 
+  showSpinner:boolean = false
   plato: any;
   constructor(private service: PlatosService, private _route: ActivatedRoute, private spinner: NgxSpinnerService) { }
 
 
   ngOnInit(): void {
     let id: any = this._route.snapshot.paramMap.get('id');
-    this.spinner.show('mySpinner');
+    this.showSpinner = true
     this.service.detallesPlato(id).subscribe((datos: any) => {
-      console.log(datos);
-      this.spinner.hide('mySpinner');
+      this.showSpinner = false
       this.plato = datos;
     })
   }

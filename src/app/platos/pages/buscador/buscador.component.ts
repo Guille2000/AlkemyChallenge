@@ -13,6 +13,8 @@ export class BuscadorComponent implements OnInit {
 
   @Output() listaPlatos: EventEmitter<any> = new EventEmitter<any>();
 
+  showSpinner:boolean = false
+
   constructor(private service: PlatosService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -36,9 +38,9 @@ export class BuscadorComponent implements OnInit {
         title: 'Tiene que ingresar al menos 2 letras para realizar la busqueda'
       })
     } else {
-      this.spinner.show('mySpinner');
+      this.showSpinner = true
       this.service.obtenerPlatos(busqueda).subscribe((data: any) => {
-        this.spinner.hide('mySpinner');
+        this.showSpinner = false
         this.listaPlatos.emit(data.results);
       })
     }
