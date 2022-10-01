@@ -1,0 +1,9 @@
+<div>
+  <app-acumulador></app-acumulador>
+</div>
+
+<div>
+  <div *ngFor="let item of arrayPlatos">
+      <app-item-plato [plato]="item" [isInMisPlatos]="true"></app-item-plato>
+  </div>
+</div>
