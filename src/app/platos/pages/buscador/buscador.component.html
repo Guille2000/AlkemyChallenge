@@ -1,4 +1,5 @@
 <div class="buscar">
   <input type="text" (keyup)="onKeyUp($event)" id="txtBuscar" placeholder="Su plato..">
  <button type="button" class="btn btn-success" (click)="buscarPlatos()">Buscar</button>
+ <mat-spinner *ngIf="showSpinner"></mat-spinner>
 </div>
