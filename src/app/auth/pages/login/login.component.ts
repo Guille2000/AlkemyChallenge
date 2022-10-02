@@ -39,12 +39,14 @@ export class LoginComponent implements OnInit {
         this.showSpinner = false
         this.router.navigate(['home']);
       }, (err: any) => {
+        this.showSpinner = false
         Swal.fire({
           title: "Error",
           text: 'Ingrese una contraseña y un email validos',
           icon: 'error',
           timer: 2000,
           confirmButtonColor: '#d33'
+
         });
       })
     }
