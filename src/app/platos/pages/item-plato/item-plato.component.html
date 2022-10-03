@@ -1,15 +1,16 @@
-<div class="row d-flex justify-content-center align-items-center sombreado p-3 m-3">
-  <div class="col col-6 col-sm-4">
-      <img src="{{plato.image}}" class="imagen" width="100%" alt="{{plato.title}} image">
+<div class="row d-flex justify-content-center align-items-center p-3 m-3 fondo">
+
+  <div class="col col-6 col-sm-4" >
+      <img src="{{plato.image}}" class="imagen" width="100%" alt="{{plato.title}}">
   </div>
   <div class="col col-6 col-sm-5">
-      <div class="col"> <b> {{plato.title}} </b> </div>
+      <div class="col titulo"> <h2> {{plato.title}} </h2> </div>
       <div class="col">
-          <div> Precio: {{plato.pricePerServing | currency }}</div>
-          <div> Tiempo de preparacion: {{plato.readyInMinutes | number }} minutos </div>
-          <div> Health Score: {{plato.healthScore | number }}</div>
-          <div> Vegano: {{plato.vegan | siono }}</div>
-          <div> Vegetariano: {{plato.vegetarian | siono}}</div>
+          <p class="parrafo"> Precio: {{plato.pricePerServing | currency }}</p>
+          <p class="parrafo"> Tiempo de preparacion: {{plato.readyInMinutes | number }} minutos </p>
+          <p class="parrafo"> Health Score: {{plato.healthScore | number }}</p>
+          <p class="parrafo"> Vegano: {{plato.vegan | siono }}</p>
+          <p class="parrafo"> Vegetariano: {{plato.vegetarian | siono}}</p>
       </div>
   </div>
   <div class="col col-12 col-sm-3 d-flex d-sm-block justify-content-center ">
