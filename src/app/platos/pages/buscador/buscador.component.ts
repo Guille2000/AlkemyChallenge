@@ -14,6 +14,7 @@ export class BuscadorComponent implements OnInit {
   @Output() listaPlatos: EventEmitter<any> = new EventEmitter<any>();
 
   showSpinner:boolean = false
+  sinResultados:boolean = false
 
   constructor(private service: PlatosService, private spinner: NgxSpinnerService) { }
 
@@ -40,6 +41,13 @@ export class BuscadorComponent implements OnInit {
     } else {
       this.showSpinner = true
       this.service.obtenerPlatos(busqueda).subscribe((data: any) => {
+        console.log(data.results)
+        if(data.results.length == 0){
+          console.log('No hay nada')
+          this.sinResultados = true
+        } else {
+          this.sinResultados = false
+        }
         this.showSpinner = false
         this.listaPlatos.emit(data.results);
       })

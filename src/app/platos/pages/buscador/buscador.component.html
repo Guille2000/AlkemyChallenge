@@ -3,3 +3,7 @@
  <button type="button" class="btn btn-success" (click)="buscarPlatos()">Buscar</button>
  <mat-spinner *ngIf="showSpinner"></mat-spinner>
 </div>
+<div *ngIf="sinResultados">
+  <p class="text-center fs-5 text-primary mt-2">¡Lo sentimos! No hemos encontrado resultados con su busquéda.
+    Pruebe con otro termino.</p>
+</div>
