@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { PlatosService } from 'src/app/services/platos.service';
 
 import Swal from 'sweetalert2';
@@ -16,7 +15,7 @@ export class BuscadorComponent implements OnInit {
   showSpinner:boolean = false
   sinResultados:boolean = false
 
-  constructor(private service: PlatosService, private spinner: NgxSpinnerService) { }
+  constructor(private service: PlatosService) { }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { PlatosService } from 'src/app/services/platos.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class PlatoDetalleComponent implements OnInit {
 
   showSpinner:boolean = false
   plato: any;
-  constructor(private service: PlatosService, private _route: ActivatedRoute, private spinner: NgxSpinnerService) { }
+  constructor(private service: PlatosService, private _route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
